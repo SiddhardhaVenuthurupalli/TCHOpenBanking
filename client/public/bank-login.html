@@ -139,7 +139,36 @@
         });
 
         container.appendChild(card);
-      });
+      container.appendChild(card);
+          });
+
+          const infoText = document.createElement("p");
+          infoText.className = "text-muted mt-3";
+          infoText.innerHTML = `
+      <strong>BMO</strong> will access the following standard information:<br/>
+      Account Name, Description, Balance, Account, Transactions, Statement Date, Payment Details
+          `;
+
+          const additionalInfo = document.createElement("div");
+          additionalInfo.className = "mt-3";
+          additionalInfo.innerHTML = `
+      <h6>Select additional information you want to share:</h6>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="accountHolderInfo">
+        <label class="form-check-label" for="accountHolderInfo">
+          Account holder name(s) & Role(s) (Data necessary to verify account ownership)
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="accountRoutingInfo">
+        <label class="form-check-label" for="accountRoutingInfo">
+          Account number and routing number (Data necessary to enable money movement across financial institutions)
+        </label>
+      </div>
+          `;
+
+          container.appendChild(infoText);
+          container.appendChild(additionalInfo);
     }
 
     function confirmAccount() {
