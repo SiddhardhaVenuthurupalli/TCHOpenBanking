@@ -1,0 +1,88 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "username": "user123",
+        "password": "pass123"
+      }
+    ],
+    "otps": [
+      {
+        "id": 1,
+        "userId": 1,
+        "otp": "456789"
+      }
+    ],
+    "accounts": [
+      {
+        "id": "830a27ca-6136-3254-89fb-7927e0f1b6e1",
+        "userId": 1,
+        "accountType": "CHECKING",
+        "displayName": "Checking - 7375",
+        "status": "OPEN",
+        "description": "Checking",
+        "currentBalance": 4865.77,
+        "availableBalance": 4865.77,
+        "currency": "USD"
+      },
+      {
+        "id": "de7b8891-4d63-4918-a772-9fe053fe2ee1",
+        "userId": 1,
+        "accountType": "SAVINGS",
+        "displayName": "Savings - 4382",
+        "status": "OPEN",
+        "description": "Savings",
+        "currentBalance": 10985.23,
+        "availableBalance": 10985.23,
+        "currency": "USD"
+      }
+    ],
+      "accountDescriptorList": [
+          {
+            "accountId": "830a27ca-6136-3254-89fb-7927e0f1b6e1",
+            "accountType": "CHECKING",
+            "displayName": "Checking - 7375",
+            "status": "OPEN",
+            "description": "Checking",
+            "fiAttributes": null,
+            "error": null
+          },
+          {
+            "accountId": "b3ecdb3d-445b-91c7-d525-22c616a00ef1",
+            "accountType": "SAVINGS",
+            "displayName": "Savings - 7163",
+            "status": "OPEN",
+            "description": "Savings",
+            "fiAttributes": null,
+            "error": null
+          },
+          {
+            "accountId": "41d94eba-8634-5b1f-1fe8-b174b280da9c",
+            "accountType": "CREDITCARD",
+            "displayName": "Credit Card - 0812",
+            "status": "OPEN",
+            "description": "Credit Card",
+            "fiAttributes": null,
+            "error": null
+          },
+          {
+            "accountId": "bc04072e-c883-77d4-8a89-da1cda0d1056",
+            "accountType": "MORTGAGE",
+            "displayName": "Mortgage - 3250",
+            "status": "OPEN",
+            "description": "Mortgage",
+            "fiAttributes": null,
+            "error": null
+          },
+          {
+            "accountId": "12afe446-0751-5dfb-f5e3-18c164e831cf",
+            "accountType": "IRA",
+            "displayName": "IRA - 3798",
+            "status": "OPEN",
+            "description": "IRA",
+            "fiAttributes": null,
+            "error": null
+          }
+    ]
+  }
+  

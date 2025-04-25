@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bank Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+  <style>
+    body {
+      background-color: #f7f9fc;
+      padding: 2rem;
+    }
+    .step {
+      display: none;
+    }
+    .step.active {
+      display: block;
+    }
+    .account-card {
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: 0.3s;
+    }
+    .account-card:hover {
+      background-color: #f1f1f1;
+    }
+    .account-card.selected {
+      border-color: #007bff;
+      background-color: #e7f1ff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Bank Logo 
+  <div class="text-center">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAO0AAADUCAMAAABH5lTYAAAAeFBMVEVUuUj///9QuESAyHhMtj6n2KJItTpDtDXr9urN6Mp6xnPH5sRKtjxevVNSuEWf1ZljvlhAszD3/PdowF7k8+Jxw2je8NyV0Y9Yu0y537Xv+O7P6c2Hy4D0+vNgvVWOzoex3K2k15+a0pR2xW3C5L+23rLX7dWRz4v+3ZNVAAAEoklEQVR4nO2d63KbMBBGQcbIOFwCjh1fY8dJnPd/w+KknWmnZZcO2hWX7/zuWDlFEqvVSgQBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIApEfUKY3JJ2WzeF16L4nqerbO0tHEkI50/hr2jekoux6xWdm7cR9tvTkmR2dStcH9t7ywuLzaajG3N5ly68+29bd2lC2fPdwC2te+5dDN+B2Fb9+csnZBtGF7tlGzDxHbvzcOxDRfGTMg2rLKuukOy7a47KNvwlHcbu8OyDRfdZuaB2YZJOSXb8LlLmDE42zDrNHSX7Vjvm/+A27rlj/yT2fFcXJKntrabTn3ZtKNcNP8BiW35Iw1EURrb9O1CNPEbny5XvA1YyjZ20YJJy3XSwrZyETEzyNvWGPt443XnTtZDJCq29axZPvO67pproo2tIRLFrRtKVxX7cMVHbgtbcywaed22bslknO5JfOS2sI2pOeY/XpOGjQHO0g+3je2DG9sgOjK2N+mHq2kb2HdGdyu6W6RsG8TM0JWep3Rtoytt+yTclXVtA3uidYW7srJtVNC2V9murGwbRLTtQTae0rYlf6ym07qPRdvWzGjblejA1bYNLP0SKkQHrrotGYeG4YPowFW3ZV65HXOtDOq2+QtpK7vIVbcNSnrgrjvvgRHo28Z00uZZcprSt00/SNsPyeyUvm30SdqKRlP6tmZN2ooug/RtmVBZNK3swZaZlMc1JweW3ht6EYyUPdgyr6Cl4MP1YUsv+iR3vzzYphfSVnIV5GNOfiVtLyOzpVdBO8FgyoOtobcM3gWDKR+2dLLG4T7qX/iwfSNtbyOzpQPljWDo6ME2X03Klt7HHZttRtpKLvlgC1vYwrYFE7Od1htoUtEFEzmOLU6mVwWS6XMftkvSdmwrvkmt5iO6VHlkmZppZeGmlWGN6UrWkWXPmaqa2bh2RuyGtJWsD/NhSxwvq3Ft+EfTHvZvSdlqXJUI+Za03Y9rb54JkyWXQD5qauhNL9FCRw/1UjvSVjKU8mBr6UKE87iqTJiSmkfJcmz9GlY6BzeyGlam8E/2RJB+7Tm9JhhZ7TkTN47rXAF3NcVKckrWP/00p23HdR6Iai+UTSYzrQvYGnqfQPpIqrItMyMLD1v1Z0vLnmSHrfbZajrdKJo5v6Nqm+e0rGht8h3dWwKY46jiV9Wo3gDBnEYV3RT5QtE2N9xlJrKHbwNN25wJLIRTUl+o2eZM0rzmKDxH6dlGhr0zTTS3+o2ObW6X7H1LGleladiaOGBePXcWwnHUHWnbPErLVQtX2b09V7aBjZuxttyed3Sy4hc3hUfb2TZ5aCQ5bNrdbfj93yb9rnVh6wrRA+R9s+126+zAbPfylxv2yLbzXeBDshXOz/TLdq0yQ/XDtlqpyfq3fQq0unEPbN8dfIpiKLbVTOHS5L7Yfjj9AlS/bd+3SjGFf9vqso01R6xP28PR9Wfb+mq72B3jWPGt4812cbjMjE09qTK2h+62VXXaLza3ZDd/XmZfn5b0ZvpFlDYS8f+E5Ge2xto4TiOhT2gCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgv5gpEcymxA80GYF4+2jbYgAAAABJRU5ErkJggg==" alt="Bank Logo" class="bank-logo" />
+  </div></div>-->
+
+  <!-- Step 1: Login -->
+  <div class="step active" id="login-step" class="text-center">
+    <img src="data:image/png;base64,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" alt="Bank Logo" class="bank-logo" />
+    <!--<h3 class="text-center mb-4">Login to Your Bank</h3>-->
+    <div class="card p-4 shadow-sm">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input class="form-control" id="username" placeholder="Enter your username" />
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input class="form-control" id="password" type="password" placeholder="Enter your password" />
+      </div>
+      <button class="btn btn-primary w-100" onclick="handleLogin()">Login</button>
+    </div>
+    <p class="text-muted text-center mt-3">Forgot your password? <a href="#" class="text-decoration-none">Click here</a></p>
+  </div>
+
+  <!-- Step 2: OTP -->
+  <div class="step" id="otp-step">
+    <h3>Enter OTP</h3>
+    <input class="form-control my-2" id="otp" placeholder="Enter OTP" />
+    <button class="btn btn-success w-100" onclick="verifyOtp()">Verify OTP</button>
+  </div>
+
+  <!-- Step 3: Select Account -->
+  <div class="step" id="account-step">
+    <h3>Select Bank Account</h3>
+    <div id="accounts-container" class="my-3"></div>
+    <button class="btn btn-primary w-100 mt-3 d-none" id="confirm-account-btn" onclick="confirmAccount()">Confirm Account</button>
+  </div>
+  <!-- Replace the QR code section with the following -->
+<div class="text-center mt-5">
+ <!---- <h3 class="mb-4">Scan the QR Code to Pay Using Your Phone</h3> -->
+  <div class="d-flex justify-content-center">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://onlinebanking.usbank.com/auth/login/" 
+         alt="QR Code" 
+         style="width: 200px; height: 200px; border: 2px solid #ddd; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);" />
+  </div>
+  <p class="mt-3 text-muted">Use your Mobile Camera to scan the QR code and complete the payment.</p>
+</div>
+
+  <script>
+    let userId = null;
+    let selectedAccount = null;
+
+    const showStep = (id) => {
+      document.querySelectorAll(".step").forEach(step => step.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+    };
+
+    async function handleLogin() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      const res = await fetch(`http://localhost:4000/users?username=${username}&password=${password}`);
+      const users = await res.json();
+
+      if (users.length > 0) {
+        userId = users[0].id;
+        showStep("otp-step");
+      } else {
+        alert("Invalid credentials");
+      }
+    }
+
+    async function verifyOtp() {
+      const otpInput = document.getElementById("otp").value;
+      const res = await fetch(`http://localhost:4000/otps?userId=${userId}`);
+      const otps = await res.json();
+
+      if (otps.length > 0 && otps[0].otp === otpInput) {
+        loadAccounts();
+        showStep("account-step");
+      } else {
+        alert("Incorrect OTP");
+      }
+    }
+
+    async function loadAccounts() {
+      const res = await fetch(`http://localhost:4000/accounts?userId=${userId}`);
+      const accounts = await res.json();
+      const container = document.getElementById("accounts-container");
+      container.innerHTML = "";
+
+      accounts.forEach(account => {
+        const card = document.createElement("div");
+        card.className = "account-card p-3 rounded shadow-sm mb-3";
+        card.innerHTML = `
+          <strong>${account.displayName}</strong><br/>
+          ${account.description} - ${account.currency} ${account.currentBalance.toFixed(2)}
+        `;
+
+        card.addEventListener("click", () => {
+          document.querySelectorAll('.account-card').forEach(c => c.classList.remove("selected"));
+          card.classList.add("selected");
+          selectedAccount = account;
+          document.getElementById("confirm-account-btn").classList.remove("d-none");
+        });
+
+        container.appendChild(card);
+      });
+    }
+
+    function confirmAccount() {
+      if (selectedAccount) {
+        window.opener.postMessage({ type: "BANK_PAYMENT_SUCCESS", account: selectedAccount }, "*");
+        window.close();
+      } else {
+        alert("Please select an account.");
+      }
+    }
+  </script>
+
+</body>
+</html>
