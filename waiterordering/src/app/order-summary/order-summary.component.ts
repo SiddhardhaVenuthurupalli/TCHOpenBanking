@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, signal, inject } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import {
   IonContent, IonList, IonItem, IonIcon, IonRow, IonCol,
   IonLabel, IonButton, IonTextarea,
@@ -11,7 +12,7 @@ import { OrderService } from '../services/order.service';
 @Component({
   selector: 'app-order-summary',
   standalone: true,
-  imports: [IonContent, IonList, IonItem, IonIcon, IonRow, IonCol, IonLabel, IonButton, IonTextarea],
+  imports: [IonContent, IonList, IonItem, IonIcon, IonRow, IonCol, IonLabel, IonButton, IonTextarea, FormsModule],
   template: `
     <ion-content class="ion-padding">
       <!-- Close button -->
